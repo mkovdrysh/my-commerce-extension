@@ -1,5 +1,11 @@
 {
     "meshConfig": {
+        "responseConfig": {
+            "CORS": {
+                "origin": "*",
+                "credentials": false
+            }
+        },
         "sources": [
             {
                 "name": "Commerce",
