@@ -1,0 +1,34 @@
+{
+    "meshConfig": {
+        "sources": [
+            {
+                "name": "Commerce",
+                "handler": {
+                    "graphql": {
+                        "endpoint": "https://na1-sandbox.api.commerce.adobe.com/TqKLZLyDwkJUDVX2uKmTdg/graphql",
+                        "operationHeaders": {
+                            "Magento-Website-Code": "base",
+                            "Magento-Store-View-Code": "default"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Enrichment",
+                "handler": {
+                    "openapi": {
+                        "source": "./enrichment-openapi.json"
+                    }
+                },
+                "transforms": [
+                    {
+                        "prefix": {
+                            "value": "Enrichment_",
+                            "includeRootOperations": true
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

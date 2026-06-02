@@ -11,8 +11,15 @@ application:
             web: 'yes'
             runtime: nodejs:22
             inputs:
-              LOG_LEVEL: debug
-              apiKey: $SERVICE_API_KEY
+              LOG_LEVEL: info
+              COMMERCE_STORE_CODE: $COMMERCE_STORE_CODE
+              COMMERCE_API_BASE_URL: $COMMERCE_API_BASE_URL
+              IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
+              IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
+              IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
+              IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
+              IMS_TOKEN_URL: $IMS_TOKEN_URL
             annotations:
-              require-adobe-auth: true
+              require-adobe-auth: false
               final: true
+              include-ims-credentials: true
